@@ -6,6 +6,6 @@ var myDialog = document.querySelector('#js')
 myDialogLink.addEventListener("click", function(e) {
   e.preventDefault()
   dialog.create(myDialog, new Object, function() {
-    console.log('SALUT')
+    console.log('This dialog was triggered by javascript !')
   })
 })
