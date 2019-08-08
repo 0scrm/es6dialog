@@ -1,0 +1,67 @@
+dialog {
+  &:not([open]) {
+    display: none;
+  }
+  &+.backdrop,
+  &::backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+.dialog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  border: none;
+  padding: 0;
+  background: white;
+  color: #333;
+  display: block;
+  border-radius: 5px;
+  overflow: hidden;
+  &.-fixed {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &.-shadow {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.25);
+  }
+  &__wrapper {
+    height: 100%;
+    padding: 2rem;
+  }
+  &__close {
+    opacity: .8;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog-no-scroll {
+  overflow: hidden;
+}
