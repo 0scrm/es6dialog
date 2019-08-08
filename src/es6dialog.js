@@ -37,9 +37,11 @@ class DialogClass {
     if (!this.options.allowScroll) {
       document.body.classList.add("dialog-no-scroll")
     }
-
+    const exists = (selector) => {
+      return this.el.querySelector(selector) !== null
+    }
     // Creating wrapper and moving items into it
-    if (this.el.querySelector(".dialog__wrapper") === null) {
+    if (!exists(".dialog__wrapper")) {
       const wrapper = document.createElement("div")
       wrapper.classList.add("dialog__wrapper")
       while (this.el.children.length) {
@@ -49,7 +51,7 @@ class DialogClass {
     }
 
     // Creating close element
-    if (this.el.querySelector(".js-close-dialog") === null) {
+    if (!exists(".js-close-dialog")) {
       let close = document.createElement("a")
       close.classList.add("js-close-dialog", "dialog__close")
       close.setAttribute("data-dialog", this.el.getAttribute("id"))
