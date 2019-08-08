@@ -87,6 +87,7 @@ const dialog = {
     const links = document.querySelectorAll(config.global.linkClass)
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
+        e.preventDefault()
         let id = e.target.getAttribute("data-dialog"),
           dialog = document.getElementById(id)
           let options = new Object
