@@ -2,6 +2,7 @@ dialog {
   &:not([open]) {
     display: none;
   }
+
   &+.backdrop,
   &::backdrop {
     position: fixed;
@@ -9,46 +10,52 @@ dialog {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, .3);
   }
 }
+
 .dialog {
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
   width: fit-content;
-  height: fit-content;
   max-width: 100%;
+  height: fit-content;
   max-height: 100%;
   margin: auto;
-  border: none;
   padding: 0;
-  background: white;
-  color: #333;
-  display: block;
+  color: #333333;
+  border: none;
   border-radius: 5px;
-  overflow: hidden;
+  background: white;
+
   &.-fixed {
     position: fixed;
     top: 50%;
     transform: translate(0, -50%);
   }
+
   &.-shadow {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 40px rgba(0, 0, 0, .1), 0 0 10px rgba(0, 0, 0, .25);
   }
+
   &__wrapper {
     height: 100%;
     padding: 2rem;
   }
+
   &__close {
-    opacity: .8;
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 5px;
-    cursor: pointer;
     width: 15px;
     height: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: .8;
+
     &:hover {
       opacity: 1;
     }
@@ -61,7 +68,7 @@ dialog {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, .3);
 }
 
 .dialog-no-scroll {

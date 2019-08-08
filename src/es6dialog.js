@@ -29,10 +29,10 @@ class DialogClass {
     this.el.removeAttribute("class")
     this.el.classList.add("dialog")
     if (this.options.fixed) {
-        this.el.classList.add("-fixed")
+      this.el.classList.add("-fixed")
     }
     if (this.options.shadow) {
-        this.el.classList.add("-shadow")
+      this.el.classList.add("-shadow")
     }
     if (!this.options.allowScroll) {
       document.body.classList.add("dialog-no-scroll")
@@ -90,10 +90,10 @@ const dialog = {
         e.preventDefault()
         let id = e.target.getAttribute("data-dialog"),
           dialog = document.getElementById(id)
-          let options = new Object
-          if (e.target.hasAttribute("data-dialog-options")) {
-            options = JSON.parse(e.target.getAttribute("data-dialog-options"))
-          }
+        let options = new Object
+        if (e.target.hasAttribute("data-dialog-options")) {
+          options = JSON.parse(e.target.getAttribute("data-dialog-options"))
+        }
         new DialogClass(dialog, options).open()
       })
     })
