@@ -3,8 +3,7 @@ dialog {
     display: none;
   }
 
-  &+.backdrop,
-  &::backdrop {
+  & + .backdrop, &::backdrop {
     position: fixed;
     top: 0;
     right: 0;
@@ -72,5 +71,8 @@ dialog {
 }
 
 .dialog-no-scroll {
+  position: fixed;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
