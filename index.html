@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6 Dialog Demo</title>
+  <link rel="stylesheet" href="./index.scss">
+  <link rel="stylesheet" href="./src/es6dialog.scss">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>ES6 Dialog Demo</h1>
+  </header>
+  <section id="default-modal">
+    <a href="#" class="js-dialog" data-dialog="default">Default modal</a>
+    <div class="u-display-b">
+      <code>
+        &lt;a href="#" class="js-dialog" data-dialog="default">Default modal&lt;/a&gt;
+      </code>
+    </div>
+    <dialog id="default">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
+        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+
+    </dialog>
+  </section>
+
+  <section id="fixed-modal">
+    <a href="#" class="js-dialog" data-dialog="fixed" data-dialog-options='{"fixed": true}'>Fixed modal</a>
+    <div class="u-display-b">
+      <code>
+        &lt;a href="#" class="js-dialog" data-dialog="fixed-modal" data-dialog-options='{"fixed": true}'>Fixed
+        modal&lt;/a&gt;
+      </code>
+    </div>
+    <dialog id="fixed">
+      <h2>Fixed Modal</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
+        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+    </dialog>
+  </section>
+  <section id="huge-modal">
+    <a href="#" class="js-dialog" data-dialog="huge"
+      data-dialog-options='{"fixed": true, "allowScroll": false, "height": "80%", "width":"80%"}'>Huge modal (scroll disabled)</a>
+    <div class="u-display-b">
+      <code>
+        &lt;a href="#" class="js-dialog" data-dialog-options='{"fixed": true, "allowScroll": false, height": "80%", "width":"80%"}'>Huge modal (scroll disabled)&lt;/a&gt;
+      </code>
+    </div>
+    <dialog id="huge">
+      <h2>Huge Modal (scroll disabled)</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
+        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+    </dialog>
+  </section>
+  <section id="js-modal">
+    <a href="#" class="javascript-triggered-dialog" data-dialog="js">Javascript-triggered modal</a>
+    <div class="u-display-b">
+      <code>
+        &lt;a href="#" class="javascript-triggered-dialog" data-dialog="js">Javascript-triggered modal&lt;/a&gt;
+      </code>
+    </div>
+    <div class="u-display-b">
+      <code>
+        var myDialogLink = document.querySelector('.javascript-triggered-dialog')<br>
+        var myDialog = document.querySelector('#js')<br>
+        myDialogLink.addEventListener("click", function() {<br>
+        &nbsp;&nbsp;dialog.create(myDialog)<br>
+        })
+      </code>
+    </div>
+    <dialog id="js">
+      <h2>Javascript-triggered modal</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
+        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+    </dialog>
+  </section>
+  <div style="margin-bottom: 1000px"></div>
+  <script src="./src/es6dialog.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
