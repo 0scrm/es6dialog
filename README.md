@@ -5,3 +5,5 @@
 ...
 
 ## [Demo with code examples](https://es6dialog.netlify.com)
+**Status :**
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4580be38-f647-4e58-aa2c-8dbfc2617535/deploy-status)](https://app.netlify.com/sites/es6dialog/deploys)
