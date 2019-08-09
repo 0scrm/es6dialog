@@ -3,23 +3,24 @@
 
 ## How to
 
-1. Download the [es6dialog.js script](#) and include **es6dialog** in your webpage. (Or install via ``npm install es6dialog --save`` or ``yarn add es6dialog --save``)
+1. Download the [es6dialog.js script](https://github.com/oscar-marion/es6dialog/blob/master/build/es6dialog.js) and include **es6dialog.js** in your webpage.
 
     ```html
     <script src="es6dialog.min.js"></script>
     ```
 
-    Or:
-	```js
-	import 'es6dialog';
+    Or install via ``npm install es6dialog --save`` or ``yarn add es6dialog --save`` and import it:
 
-	// Note: Never import/require the *.min.js files from the npm package.
-	```
+    ```js
+    import dialog from "es6dialog"
+    // Note: you will still need to load the es6dialog.css/scss
+    ```
 
-2. An ES6 Dialog can be triggered as follows ::
+2. An ES6 Dialog can be triggered as follows :
 
     **HTML triggered**
     ```js
+    import dialog from "es6dialog"
     dialog.init() // Adds a listener on all the js-dialog links
     ```
     ```html
@@ -33,10 +34,14 @@
     ```
     **JS triggered  (import/require needed):**
     ```js
-    import dialog from "dialog"
+    import dialog from "es6dialog"
     dialog.create(myDialog)
     ```
     **JS triggered through Window Object (no import/require needed):**
+    ```html
+    <script src="es6dialog.min.js"></script>
+    ````
+
     ```js
     new window.globalDialog(myDialog).open()
     ```
