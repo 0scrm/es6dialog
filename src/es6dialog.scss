@@ -3,8 +3,7 @@ dialog {
     display: none;
   }
 
-  &+.backdrop,
-  &::backdrop {
+  & + .backdrop, &::backdrop {
     position: fixed;
     top: 0;
     right: 0;
@@ -50,6 +49,7 @@ dialog {
     position: absolute;
     top: 5px;
     right: 5px;
+    box-sizing: content-box;
     width: 15px;
     height: 15px;
     padding: 5px;
