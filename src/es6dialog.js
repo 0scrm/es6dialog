@@ -54,7 +54,7 @@ class DialogClass {
     if (!exists(".js-close-dialog")) {
       let close = document.createElement("a")
       close.classList.add("js-close-dialog", "dialog__close")
-      close.setAttribute("data-dialog", this.el.getAttribute("id"))
+      close.setAttribute("data-dialog-id", this.el.getAttribute("id"))
       close.innerHTML = config.global.closeText
       this.el.appendChild(close)
     }
@@ -90,7 +90,7 @@ const dialog = {
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault()
-        let id = e.target.getAttribute("data-dialog"),
+        let id = e.target.getAttribute("data-dialog-id"),
           dialog = document.getElementById(id)
         let options = new Object
         if (e.target.hasAttribute("data-dialog-options")) {

@@ -14,57 +14,67 @@
 
 <body>
   <header>
-    <h1>ES6 Dialog Demo</h1>
+    <h1>ES6 Dialog</h1>
   </header>
-  <section id="default-modal">
-    <a href="#" class="js-dialog" data-dialog="default">Default modal</a>
+  <section id="dialog-el" class="u-tac">
+  <p class="u-bold u-margin-b-m">Your dialog element should look like that:</p>
+  <div class="u-display-b">
+    <code class="highlight">
+    &lt;dialog id="yourCustomID"&gt;<br>
+    &nbsp;&nbsp;&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?&lt;/p&gt;<br>
+    &lt;/dialog&gt;
+    </code>
+  </div>
+  <p class="u-bold u-margin-t-m"><span class="u-margin-r-s">&darr;&darr;</span> Now, let's see how to open it ! <span class="u-margin-l-s">&darr;&darr;</span></p>
+  </section>
+  <section id="default-dialog">
+    <a href="#" class="js-dialog" data-dialog-id="default">Default dialog</a>
     <div class="u-display-b">
       <code>
-        &lt;a href="#" class="js-dialog" data-dialog="default">Default modal&lt;/a&gt;
+        &lt;a href="#" class="js-dialog" data-dialog-id="default">Default dialog&lt;/a&gt;
       </code>
     </div>
     <dialog id="default">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
-
     </dialog>
   </section>
 
-  <section id="fixed-modal">
-    <a href="#" class="js-dialog" data-dialog="fixed" data-dialog-options='{"fixed": true}'>Fixed modal</a>
+  <section id="fixed-dialog">
+    <a href="#" class="js-dialog" data-dialog-id="fixed" data-dialog-options='{"fixed": true}'>Fixed dialog</a>
     <div class="u-display-b">
       <code>
-        &lt;a href="#" class="js-dialog" data-dialog="fixed-modal" data-dialog-options='{"fixed": true}'>Fixed
-        modal&lt;/a&gt;
+        &lt;a href="#" class="js-dialog" data-dialog-id="fixed-dialog" data-dialog-options='{"fixed": true}'>Fixed
+        dialog&lt;/a&gt;
       </code>
     </div>
     <dialog id="fixed">
-      <h2>Fixed Modal</h2>
+      <h2>Fixed dialog</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
-  <section id="huge-modal">
-    <a href="#" class="js-dialog" data-dialog="huge"
-      data-dialog-options='{"fixed": true, "allowScroll": false, "height": "80%", "width":"80%"}'>Huge modal (scroll
+  <section id="huge-dialog">
+    <a href="#" class="js-dialog" data-dialog-id="huge"
+      data-dialog-options='{"fixed": true, "allowScroll": false, "height": "80%", "width":"80%"}'>Huge dialog (scroll
       disabled)</a>
     <div class="u-display-b">
       <code>
-        &lt;a href="#" class="js-dialog" data-dialog-options='{"fixed": true, "allowScroll": false, height": "80%",
-        "width":"80%"}'>Huge modal (scroll disabled)&lt;/a&gt;
+        &lt;a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "allowScroll": false, height": "80%",
+        "width":"80%"}'>Huge dialog (scroll disabled)&lt;/a&gt;
       </code>
     </div>
     <dialog id="huge">
-      <h2>Huge Modal (scroll disabled)</h2>
+      <h2>Huge dialog (scroll disabled)</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
-  <section id="js-modal">
-    <a href="#" class="javascript-triggered-dialog" data-dialog="js">Javascript-triggered modal</a>
+  <section id="js-dialog">
+    <a href="#" class="javascript-triggered-dialog">Javascript-triggered dialog</a>
     <div class="u-display-b">
       <code>
-        &lt;a href="#" class="javascript-triggered-dialog" data-dialog="js">Javascript-triggered modal&lt;/a&gt;
+        &lt;a href="#" class="javascript-triggered-dialog">Javascript-triggered dialog&lt;/a&gt;
       </code>
     </div>
     <div class="u-display-b">
@@ -77,12 +87,42 @@
       </code>
     </div>
     <dialog id="js">
-      <h2>Javascript-triggered modal</h2>
+      <h2>Javascript-triggered dialog</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
-  <div style="margin-bottom: 1000px"></div>
+  <section id="js-dialog-advances">
+    <a href="#" class="js-advanced-triggered-dialog">Advanced Javascript-triggered dialog</a>
+    <div class="u-display-b">
+      <code>
+        &lt;a href="#" class="js-advanced-triggered-dialog">Advanced Javascript-triggered dialo&lt;/a&gt;
+      </code>
+    </div>
+    <div class="u-display-b">
+      <code>
+        const myAdvancedDialogLink = document.querySelector(".js-advanced-triggered-dialog")<br>
+        const myAdvancedDialog     = document.querySelector("#js-advanced")<br><br>
+        myAdvancedDialogLink.addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;e.preventDefault()<br>
+        &nbsp;&nbsp;dialog.create(myAdvancedDialog, {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;allowScroll: false,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;height: "auto",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;width: "1200px",<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;shadow: true,<br>
+        &nbsp;&nbsp;}, () => {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Callback")<br>
+        &nbsp;&nbsp;})<br>
+        })
+      </code>
+    </div>
+    <dialog id="js-advanced">
+      <h2>Javascript-triggered dialog</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
+        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+    </dialog>
+  </section>
+  <div class="u-margin-b-l"></div>
   <script src="./src/es6dialog.js"></script>
   <script src="./app.js"></script>
 </body>

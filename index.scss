@@ -1,8 +1,38 @@
 @import 'reset';
+/* Utilities */
+$size: (
+  s: 1rem,
+  m: 2rem,
+  l: 3rem
+);
+
+@each $name, $value in $size {
+  .u-margin-t-#{$name} {
+    margin-top: $value;
+  }
+  .u-margin-l-#{$name} {
+    margin-left: $value;
+  }
+  .u-margin-b-#{$name} {
+    margin-bottom: $value;
+  }
+  .u-margin-r-#{$name} {
+    margin-right: $value;
+  }
+}
 
 /* Beginning of demo styles */
 .u-display-b {
   display: block;
+}
+.u-tac {
+  text-align: center;
+}
+.u-bold {
+  font-weight: bold;
+}
+.u-margin-t-m {
+  margin-top: 2rem;
 }
 
 body {
@@ -25,11 +55,11 @@ h2 {
 }
 
 header {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 3rem auto;
   text-align: center;
   color: #ed1250;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+  text-shadow: 4px 0px 0px rgba(237, 18, 80, .4);
 
   h1 {
     display: inline-block;
@@ -70,4 +100,10 @@ code {
   color: #ffffff;
   border-radius: .5rem;
   background: #0a3d62;
+  text-align: left;
+  &.highlight {
+    background-color: #fff;
+    color: #ed1250;
+    max-width: 800px;
+  }
 }
