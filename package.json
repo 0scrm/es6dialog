@@ -1,7 +1,7 @@
 {
   "name": "es6dialog",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.0.2",
+  "main": "./build/es6dialog.js",
   "repository": "git@github.com:oscar-marion/es6dialog.git",
   "author": "Oscar Marion <contact@oscarmarion.fr>",
   "license": "GNU General Public License v3.0",
