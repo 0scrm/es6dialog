@@ -1,21 +1,23 @@
-@import 'reset';
+@import "reset";
 /* Utilities */
-$size: (
-  s: 1rem,
+$size: (s: 1rem,
   m: 2rem,
-  l: 3rem
-);
+  l: 3rem);
 
-@each $name, $value in $size {
+@each $name,
+$value in $size {
   .u-margin-t-#{$name} {
     margin-top: $value;
   }
+
   .u-margin-l-#{$name} {
     margin-left: $value;
   }
+
   .u-margin-b-#{$name} {
     margin-bottom: $value;
   }
+
   .u-margin-r-#{$name} {
     margin-right: $value;
   }
@@ -25,12 +27,15 @@ $size: (
 .u-display-b {
   display: block;
 }
+
 .u-tac {
   text-align: center;
 }
+
 .u-bold {
   font-weight: bold;
 }
+
 .u-margin-t-m {
   margin-top: 2rem;
 }
@@ -43,9 +48,7 @@ body {
   background: #042f4b;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-weight: bold;
 }
 
@@ -59,7 +62,7 @@ header {
   margin: 3rem auto;
   text-align: center;
   color: #ed1250;
-  text-shadow: 4px 0px 0px rgba(237, 18, 80, .4);
+  text-shadow: 4px 0 0 rgba(237, 18, 80, .4);
 
   h1 {
     display: inline-block;
@@ -71,21 +74,31 @@ header {
 
 section {
   padding: 3rem;
-  ;
   border-style: dashed;
   border-color: #3c6382;
   border-bottom-width: 2px;
+  ;
 }
 
-header+section {
+header + section {
   border-top-width: 2px;
 }
 
-a,
-a:active,
-a:visited {
+a, a:active, a:visited {
   text-decoration: none;
   color: #fbc99d;
+
+  &.-back {
+    font-size: .8rem;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    margin: 5px;
+    padding: 2px 8px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    background: #042f4b;
+  }
 }
 
 a:hover {
@@ -97,13 +110,14 @@ code {
   display: inline-block;
   margin: 1rem 0;
   padding: .6rem;
+  text-align: left;
   color: #ffffff;
   border-radius: .5rem;
   background: #0a3d62;
-  text-align: left;
+
   &.highlight {
-    background-color: #fff;
-    color: #ed1250;
     max-width: 800px;
+    color: #ed1250;
+    background-color: #ffffff;
   }
 }
