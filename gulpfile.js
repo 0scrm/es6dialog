@@ -1,18 +1,17 @@
-
 const {
   src,
   dest,
   series,
   parallel
-} = require("gulp");
-const sass = require("gulp-sass");
-const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
-var babel = require("gulp-babel");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
-const del = require("del");
+} = require("gulp")
+const sass = require("gulp-sass"),
+  concat = require("gulp-concat"),
+  uglify = require("gulp-uglify"),
+  babel = require("gulp-babel"),
+  postcss = require("gulp-postcss"),
+  autoprefixer = require("autoprefixer"),
+  cssnano = require("cssnano"),
+  del = require("del")
 
 
 const files = {
@@ -21,14 +20,14 @@ const files = {
 }
 
 function clean() {
-  return del("build/**/*");
+  return del("build/**/*")
 }
 
 function styles() {
   return src(files.scssPath)
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(dest("build"));
+    .pipe(dest("build"))
 }
 
 function scripts() {
@@ -36,9 +35,9 @@ function scripts() {
     .pipe(concat("es6dialog.js"))
     .pipe(babel())
     .pipe(uglify())
-    .pipe(dest("build"));
+    .pipe(dest("build"))
 }
 
 exports.default = series(
   parallel(clean, styles, scripts)
-);
+)
