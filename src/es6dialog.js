@@ -90,11 +90,11 @@ const dialog = {
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault()
-        let id = e.target.getAttribute("data-dialog-id"),
+        let id = this.getAttribute("data-dialog-id"),
           dialog = document.getElementById(id)
         let options = new Object
-        if (e.target.hasAttribute("data-dialog-options")) {
-          options = JSON.parse(e.target.getAttribute("data-dialog-options"))
+        if (this.hasAttribute("data-dialog-options")) {
+          options = JSON.parse(this.getAttribute("data-dialog-options"))
         }
         new DialogClass(dialog, options).open()
       })
