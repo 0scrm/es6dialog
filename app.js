@@ -15,7 +15,7 @@ const myAdvancedDialog     = document.querySelector("#js-advanced")
 myAdvancedDialogLink.addEventListener("click", (e) => {
   e.preventDefault()
   dialog.create(myAdvancedDialog, {
-    allowScroll: false,
+    scroll: false,
     height: "auto",
     width: "1200px",
     shadow: true,

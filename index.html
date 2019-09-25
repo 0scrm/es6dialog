@@ -42,7 +42,7 @@
   </section>
 
   <section id="fixed-dialog">
-    <a href="#" class="js-dialog" data-dialog-id="fixed" data-dialog-options='{"fixed": true}'>Fixed dialog</a>
+    <a href="#" class="js-dialog" data-dialog-id="fixed" data-dialog-options='{"fixed": true, "width": "1000px"}'>Fixed dialog</a>
     <div class="u-display-b">
       <code>
         &lt;a href="#" class="js-dialog" data-dialog-id="fixed-dialog" data-dialog-options='{"fixed": true}'>Fixed
@@ -56,12 +56,10 @@
     </dialog>
   </section>
   <section id="huge-dialog">
-    <a href="#" class="js-dialog" data-dialog-id="huge"
-      data-dialog-options='{"fixed": true, "allowScroll": false, "height": "80%", "width":"80%"}'>Huge dialog (scroll
-      disabled)</a>
+    <a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "scroll": false, "height": "80%", "width":"80%"}'>Huge dialog (scroll disabled)</a>
     <div class="u-display-b">
       <code>
-        &lt;a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "allowScroll": false, height": "80%",
+        &lt;a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "scroll": false, height": "80%",
         "width":"80%"}'>Huge dialog (scroll disabled)&lt;/a&gt;
       </code>
     </div>
@@ -107,7 +105,7 @@
         myAdvancedDialogLink.addEventListener("click", (e) => {<br>
         &nbsp;&nbsp;e.preventDefault()<br>
         &nbsp;&nbsp;dialog.create(myAdvancedDialog, {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;allowScroll: false,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;scroll: false,<br>
         &nbsp;&nbsp;&nbsp;&nbsp;height: "auto",<br>
         &nbsp;&nbsp;&nbsp;&nbsp;width: "1200px",<br>
         &nbsp;&nbsp;&nbsp;&nbsp;shadow: true,<br>
