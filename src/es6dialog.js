@@ -85,16 +85,18 @@ class DialogClass {
 }
 
 const dialog = {
-  init: (callback) => {
+  init: (options = new Object, callback) => {
     const links = document.querySelectorAll(config.global.linkClass)
     links.forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault()
         let id = this.getAttribute("data-dialog-id"),
-          dialog = document.getElementById(id)
-        let options = new Object
+            dialog = document.getElementById(id)
         if (this.hasAttribute("data-dialog-options")) {
-          options = JSON.parse(this.getAttribute("data-dialog-options"))
+          options = {
+            ...JSON.parse(this.getAttribute("data-dialog-options")),
+            ...options
+          }
         }
         new DialogClass(dialog, options).open()
       })
