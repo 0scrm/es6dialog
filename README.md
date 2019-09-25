@@ -43,24 +43,32 @@
     ````
 
     ```js
-    new window.globalDialog(myDialog).open()
+    new window.es6Dialog(myDialog).open()
     ```
 ## [Demo with code examples](https://es6dialog.netlify.com) [![Netlify Status](https://api.netlify.com/api/v1/badges/4580be38-f647-4e58-aa2c-8dbfc2617535/deploy-status)](https://app.netlify.com/sites/es6dialog/deploys)
 Can be seen [here](https://es6dialog.netlify.com).
-
 
 ## JS API - methods
 
 Note: You will need to import/require **es6dialog** in order to use these methods.
 
-### ``dialog.init()``
+### ``dialog.init(settings, callback)``
 
 The ``dialog.init()`` will automatically detect all the html elements which have the ``.js-dialog`` class, and will open the matching dialog on user's click.
 
 ```js
 dialog.init();
 ```
-Note: The html class can be changed in ``config.global.linkClass``
+Note: you can set your own settings like that :
+
+```js
+dialog.init({
+  selector: "js-customDialog",
+  width: "500px"
+}, () => {
+  console.log('Callback')
+});
+```
 
 
 ### ``dialog.create(element, options, callback)``
@@ -74,7 +82,7 @@ dialog.create(myDialog) // The simple way
 dialog.create(
   myDialog,
   {
-    allowScroll: false,
+    scroll: false,
     width: "1200px"
   },
   () => {
@@ -83,3 +91,12 @@ dialog.create(
 )
 ```
 
+Here is the list of settings :
+- ``selector`` (default: ``".js-dialog"``)
+- ``closeText``
+- ``scroll`` (default: ``true``)
+- ``height`` (default: ``"auto"``)
+- ``width`` (default: ``"600px"``)
+- ``shadow`` (default: ``false``)
+- ``fixed`` (default: (``false``)
+- ``elementClass`` (default: ``"dialog"``)
