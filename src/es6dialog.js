@@ -4,7 +4,6 @@ import dialogPolyfill from "dialog-polyfill"
 const config = {
   global: {
     linkClass: ".js-dialog",
-    isPolyfill: true,
     closeText: `<?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982" xml:space="preserve"><path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/></svg>`,
   },
   default: {
@@ -60,9 +59,7 @@ class DialogClass {
     }
   }
   open() {
-    if (config.global.isPolyfill) {
-      dialogPolyfill.registerDialog(this.el) // Polyfill
-    }
+    dialogPolyfill.registerDialog(this.el) // Polyfill
     document.querySelector("body").appendChild(this.el) // Fix z-index
     this.el.showModal()
     this.el.querySelector(".js-close-dialog").addEventListener("click", this.close)
@@ -106,9 +103,7 @@ const dialog = {
     }
   },
   create: (element, options = new Object, callback) => {
-    if (config.global.isPolyfill) {
-      dialogPolyfill.registerDialog(element)
-    }
+    dialogPolyfill.registerDialog(element)
     new DialogClass(element, options).open()
     if (typeof callback === "function" && callback()) {
       callback()
