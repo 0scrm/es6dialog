@@ -24,7 +24,6 @@ export class es6Dialog {
     this._cleanClasses()
     this._setClasses()
     this._wrapContent()
-    this._attachEvents()
   }
   /**
    * @description Shows the dialog element using the dialog API (or the Polyfill)
@@ -34,6 +33,7 @@ export class es6Dialog {
     document.querySelector("body").appendChild(this.el) // Fix z-index
     this._setScroll()
     this.el.showModal()
+    this._attachEvents()
   }
   /**
    * @description Closes the dialog
