@@ -73,7 +73,7 @@ dialog.init({
 
 ### ``open()``
 
-The ``open()`` method enables you to trigger a dialog element. The ``options`` parameter is optional.
+The ``open()`` method enables you to trigger a dialog element.
 
 ```js
 const element = document.querySelector("#amazingDialog")

@@ -1,6 +1,6 @@
 {
   "name": "es6dialog",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "./build/es6dialog.js",
   "repository": "git@github.com:oscar-marion/es6dialog.git",
   "author": "Oscar Marion <contact@oscarmarion.fr>",
