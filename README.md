@@ -71,7 +71,7 @@ dialog.init({
 ```
 
 
-### ``open(element, options)``
+### ``open()``
 
 The ``open()`` method enables you to trigger a dialog element. The ``options`` parameter is optional.
 
