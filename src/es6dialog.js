@@ -11,18 +11,18 @@ const defaultSettings = {
   elementClass: "dialog"
 }
 
-class es6Dialog {
+export class es6Dialog {
   constructor(element, settings = new Object) {
     this.el = element
     this.settings = {
       ...defaultSettings,
       ...settings
     }
-    this.close = (e) => this._close(e)
+    console.log(this.settings)
+    this._close = (e) => this.close(e)
     this._setStyles()
     this._cleanClasses()
     this._setClasses()
-    this._setScroll()
     this._wrapContent()
     this._attachEvents()
   }
@@ -32,12 +32,13 @@ class es6Dialog {
   open() {
     dialogPolyfill.registerDialog(this.el) // Polyfill
     document.querySelector("body").appendChild(this.el) // Fix z-index
+    this._setScroll()
     this.el.showModal()
   }
   /**
    * @description Closes the dialog
    */
-  _close() {
+  close() {
     this._detachEvents()
     if (document.body.classList.contains("dialog-no-scroll")) {
       document.body.classList.remove("dialog-no-scroll")
@@ -107,14 +108,14 @@ class es6Dialog {
    */
   _attachEvents() {
     if (this.el.querySelector(".js-close-dialog")) {
-      this.el.querySelector(".js-close-dialog").addEventListener("click", this.close)
+      this.el.querySelector(".js-close-dialog").addEventListener("click", this._close)
     }
     if (document.querySelector("._dialog_overlay")) {
-      document.querySelector("._dialog_overlay").addEventListener("click", this.close)
+      document.querySelector("._dialog_overlay").addEventListener("click", this._close)
     }
     document.addEventListener("click", (e) => {
       if (e.target === this.el) {
-        this.close()
+        this._close()
       }
     })
   }
@@ -123,10 +124,10 @@ class es6Dialog {
    */
   _detachEvents() {
     if (this.el.querySelector(".js-close-dialog")) {
-      this.el.querySelector(".js-close-dialog").removeEventListener("click", this.close)
+      this.el.querySelector(".js-close-dialog").removeEventListener("click", this._close)
     }
     if (document.querySelector("._dialog_overlay")) {
-      document.querySelector("._dialog_overlay").removeEventListener("click", this.close)
+      document.querySelector("._dialog_overlay").removeEventListener("click", this._close)
     }
   }
 }
@@ -166,24 +167,6 @@ export default {
     })
     if (typeof callback === "function" && callback()) {
       callback()
-    }
-  },
-  /**
-   * @param {Element} target
-   * @param {Object} settings
-   * @param {Function} callback
-   * @description Creates a dialog when triggered by js
-   */
-  create: (element, settings = new Object, callback) => {
-    try {
-      dialogPolyfill.registerDialog(element)
-      new es6Dialog(element, settings).open()
-      if (typeof callback === "function" && callback()) {
-        callback()
-      }
-    }
-    catch {
-      console.error(`🥶 Couldn't create the dialog. You may want to check your code`)
     }
   }
 }

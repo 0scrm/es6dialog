@@ -78,10 +78,11 @@
     </div>
     <div class="u-display-b">
       <code>
+        import { es6Dialog } from "es6dialog" // We import the es6Dialog class<br><br>
         var myDialogLink = document.querySelector('.javascript-triggered-dialog')<br>
-        var myDialog = document.querySelector('#js')<br>
+        var myDialog = new es6Dialog(document.querySelector('#js'))<br>
         myDialogLink.addEventListener("click", function() {<br>
-        &nbsp;&nbsp;dialog.create(myDialog)<br>
+        &nbsp;&nbsp;myDialog.open()<br>
         })
       </code>
     </div>
@@ -100,18 +101,17 @@
     </div>
     <div class="u-display-b">
       <code>
+        import { es6Dialog } from "es6dialog" // We import the es6Dialog class<br><br>
         const myAdvancedDialogLink = document.querySelector(".js-advanced-triggered-dialog")<br>
-        const myAdvancedDialog     = document.querySelector("#js-advanced")<br><br>
+        const myAdvancedDialog     = new es6Dialog(document.querySelector("#js-advanced", {<br>
+          &nbsp;&nbsp;scroll: false,<br>
+          &nbsp;&nbsp;height: "auto",<br>
+          &nbsp;&nbsp;width: "1200px",<br>
+          &nbsp;&nbsp;fixed: true<br>
+        })<br><br>
         myAdvancedDialogLink.addEventListener("click", (e) => {<br>
         &nbsp;&nbsp;e.preventDefault()<br>
-        &nbsp;&nbsp;dialog.create(myAdvancedDialog, {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;scroll: false,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;height: "auto",<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;width: "1200px",<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;shadow: true,<br>
-        &nbsp;&nbsp;}, () => {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;console.log("Callback")<br>
-        &nbsp;&nbsp;})<br>
+        &nbsp;&nbsp;myAdvancedDialog.open()<br>
         })
       </code>
     </div>

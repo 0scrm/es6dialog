@@ -21,7 +21,7 @@
     **HTML triggered**
     ```js
     import dialog from "es6dialog"
-    dialog.init() // Adds a listener on all the js-dialog links
+    dialog.init() // Adds a listener on all the .js-dialog links
     ```
     ```html
     <!-- This js-dialog element targets the data-dialog value -->
@@ -34,8 +34,8 @@
     ```
     **JS triggered  (import/require needed):**
     ```js
-    import dialog from "es6dialog"
-    dialog.create(myDialog)
+    import { es6Dialog } from "es6dialog"
+    myDialog = new es6Dialog(element).open()
     ```
     **JS triggered through Window Object (no import/require needed):**
     ```html
@@ -71,24 +71,30 @@ dialog.init({
 ```
 
 
-### ``dialog.create(element, options, callback)``
+### ``open(element, options)``
 
-The ``dialog.create()`` method enables you to trigger a dialog element. The ``options`` and ``callback`` parameters are optional.
+The ``open()`` method enables you to trigger a dialog element. The ``options`` parameter is optional.
 
 ```js
-dialog.create(myDialog) // The simple way
+const element = document.querySelector("#amazingDialog")
+// The simple way
+const amazingDialog = new es6Dialog(element)
+amazingDialog.open()
 
 // Or the advanced way
-dialog.create(
-  myDialog,
-  {
-    scroll: false,
-    width: "1200px"
-  },
-  () => {
-    console.log('Callback')
-  }
-)
+const bigFixedDialog = new es6Dialog(element, {
+  width: "1000px",
+  fixed: true
+})
+bigFixedDialog.open()
+```
+
+### ``close()``
+
+The ``close()`` method closes the dialog :
+
+```js
+bigFixedDialog.close()
 ```
 
 Here is the list of settings :
