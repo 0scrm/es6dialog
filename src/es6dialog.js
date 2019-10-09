@@ -142,28 +142,26 @@ export default {
       ...settings
     }
     const links = document.querySelectorAll(initSettings.selector)
-    if (!links.length > 0) {
-      throw new Error(`⚓️ No link found with the "${initSettings.selector}" class`)
-    }
-    links.forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault()
-        const dialog = document.getElementById(link.getAttribute("data-dialog-id"))
-        if (dialog === null) {
-          throw new Error(`🎯 No dialog found with the "${link.getAttribute("data-dialog-id")}" id`)
-        }
-        if (link.hasAttribute("data-dialog-options")) {
-          let targetSettings = {
-            ...initSettings,
-            ...JSON.parse(link.getAttribute("data-dialog-options"))
+    if (links.length > 0) {
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault()
+          const dialog = document.getElementById(link.getAttribute("data-dialog-id"))
+          if (dialog === null) {
+            throw new Error(`🎯 No dialog found with the "${link.getAttribute("data-dialog-id")}" id`)
           }
-          new es6Dialog(dialog, targetSettings).open()
-        }
-        else {
-          new es6Dialog(dialog, initSettings).open()
-        }
+          if (link.hasAttribute("data-dialog-options")) {
+            let targetSettings = {
+              ...initSettings,
+              ...JSON.parse(link.getAttribute("data-dialog-options"))
+            }
+            new es6Dialog(dialog, targetSettings).open()
+          } else {
+            new es6Dialog(dialog, initSettings).open()
+          }
+        })
       })
-    })
+    }
     if (typeof callback === "function" && callback()) {
       callback()
     }
