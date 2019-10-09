@@ -3,12 +3,10 @@ import { es6Dialog } from "./src/es6dialog"
 dialog.init()
 
 const myDialogLink = document.querySelector(".javascript-triggered-dialog")
-const myDialog = document.querySelector("#js")
+const myDialog = new es6Dialog(document.querySelector("#js"))
 myDialogLink.addEventListener("click", (e) => {
   e.preventDefault()
-  dialog.create(myDialog, new Object, () => {
-    console.log("This dialog was triggered by javascript !")
-  })
+  myDialog.open()
 })
 
 const myAdvancedDialogLink = document.querySelector(".js-advanced-triggered-dialog")

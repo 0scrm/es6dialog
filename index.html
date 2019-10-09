@@ -22,7 +22,7 @@
   <div class="u-display-b">
     <code class="highlight">
     &lt;dialog id="yourCustomID"&gt;<br>
-    &nbsp;&nbsp;&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?&lt;/p&gt;<br>
+    &nbsp;&nbsp;&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur.&lt;/p&gt;<br>
     &lt;/dialog&gt;
     </code>
   </div>
@@ -40,23 +40,8 @@
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
-
-  <section id="fixed-dialog">
-    <a href="#" class="js-dialog" data-dialog-id="fixed" data-dialog-options='{"fixed": true, "width": "1000px"}'>Fixed dialog</a>
-    <div class="u-display-b">
-      <code>
-        &lt;a href="#" class="js-dialog" data-dialog-id="fixed-dialog" data-dialog-options='{"fixed": true}'>Fixed
-        dialog&lt;/a&gt;
-      </code>
-    </div>
-    <dialog id="fixed">
-      <h2>Fixed dialog</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
-        consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
-    </dialog>
-  </section>
   <section id="huge-dialog">
-    <a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "scroll": false, "height": "80%", "width":"80%"}'>Huge dialog (scroll disabled)</a>
+    <a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "scroll": false, "height": "80%", "width":"80%"}'>Huge fixed dialog (scroll disabled)</a>
     <div class="u-display-b">
       <code>
         &lt;a href="#" class="js-dialog" data-dialog-id="huge" data-dialog-options='{"fixed": true, "scroll": false, height": "80%",
@@ -64,7 +49,7 @@
       </code>
     </div>
     <dialog id="huge">
-      <h2>Huge dialog (scroll disabled)</h2>
+      <h2>Huge fixed dialog (scroll disabled)</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
@@ -92,7 +77,7 @@
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
-  <section id="js-dialog-advances">
+  <section id="js-dialog-advanced" class="-last">
     <a href="#" class="js-advanced-triggered-dialog">Advanced Javascript-triggered dialog</a>
     <div class="u-display-b">
       <code>
@@ -121,10 +106,10 @@
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
     </dialog>
   </section>
+  <footer>
+    <p>Made with 🍕 by <a href="https://oscarmarion.fr" target="_blank" class="">Oscar Marion</a>
+  </footer>
   <div class="u-margin-b-l"></div>
-  <div class="buymeatea">
-    <style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 9px !important;font-size: 17px !important;letter-spacing:-0.08px !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/oscarmarion"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a Tea"><span style="margin-left:5px">Buy me a Tea</span></a>
-  </div>
   <script src="./src/es6dialog.js"></script>
   <script src="./app.js"></script>
 </body>

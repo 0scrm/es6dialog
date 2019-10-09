@@ -72,12 +72,17 @@ header {
   }
 }
 
+footer {
+  text-align: center;
+}
+
 section {
   padding: 3rem;
-  border-style: dashed;
-  border-color: #3c6382;
-  border-bottom-width: 2px;
-  ;
+  &:not(.-last) {
+    border-style: dashed;
+    border-color: #3c6382;
+    border-bottom-width: 2px;
+  }
 }
 
 header + section {
