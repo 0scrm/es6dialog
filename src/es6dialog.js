@@ -18,7 +18,6 @@ export class es6Dialog {
       ...defaultSettings,
       ...settings
     }
-    console.log(this.settings)
     this._close = (e) => this.close(e)
     this._setStyles()
     this._cleanClasses()
