@@ -52,7 +52,7 @@ Can be seen [here](https://es6dialog.netlify.com).
 
 Note: You will need to import/require **es6dialog** in order to use these methods.
 
-### ``dialog.init(settings, callback)``
+### ``dialog.init(userSettings, callback)``
 
 The ``dialog.init()`` will automatically detect all the html elements which have the ``.js-dialog`` class, and will open the matching dialog on user's click.
 

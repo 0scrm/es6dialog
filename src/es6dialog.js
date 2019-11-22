@@ -136,12 +136,12 @@ export default {
    * @param {Function} callback
    * @description Initialize dialog elements in the dom
    */
-  init(settings = new Object, callback) {
-    let initSettings = {
+  init(userSettings = new Object, callback) {
+    let settings = {
       ...defaultSettings,
-      ...settings
+      ...userSettings
     }
-    const links = document.querySelectorAll(initSettings.selector)
+    const links = document.querySelectorAll(settings.selector)
     if (links.length > 0) {
       links.forEach(link => {
         link.addEventListener("click", (e) => {
@@ -151,14 +151,9 @@ export default {
             throw new Error(`🎯 No dialog found with the "${link.getAttribute("data-dialog-id")}" id`)
           }
           if (link.hasAttribute("data-dialog-options")) {
-            let targetSettings = {
-              ...initSettings,
-              ...JSON.parse(link.getAttribute("data-dialog-options"))
-            }
-            new es6Dialog(dialog, targetSettings).open()
-          } else {
-            new es6Dialog(dialog, initSettings).open()
+            Object.assign(settings, JSON.parse(link.getAttribute("data-dialog-options")))
           }
+          new es6Dialog(dialog, settings).open()
         })
       })
     }
