@@ -1,6 +1,5 @@
 # es6dialog
-**ES6 Dialog** is a minimal and easy-to-use dialog plugin, which uses the ``<dialog>`` html element. It is written in ECMAScript 9 Object-Oriented Javascript (OOJS).
-
+**ES6 Dialog** is a minimal and easy-to-use dialog plugin, which uses the ``<dialog>`` html element. It uses some ES6 javascript features, so the build file is Babel-ized.
 ## How to
 
 1. Download the [es6dialog.js script](https://raw.githubusercontent.com/oscar-marion/es6dialog/master/build/es6dialog.js) and include **es6dialog.js** in your webpage.
@@ -102,10 +101,11 @@ The ``callback`` is optional.
 ---
 Here is the list of settings :
 - ``selector`` (default: ``".js-dialog"``)
-- ``closeText``
+- ``closeText`` (default: inline svg)
+- ``showClose`` (default: ``true``)
 - ``scroll`` (default: ``true``)
 - ``height`` (default: ``"auto"``)
 - ``width`` (default: ``"600px"``)
 - ``shadow`` (default: ``false``)
 - ``fixed`` (default: (``false``)
-- ``elementClass`` (default: ``"dialog"``)
+- ``customClass`` (default:  ``null``)

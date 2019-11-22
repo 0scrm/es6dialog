@@ -3,12 +3,13 @@ import dialogPolyfill from "dialog-polyfill"
 const defaultSettings = {
   selector: ".js-dialog",
   closeText: `<?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982" xml:space="preserve"><path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/></svg>`,
+  showClose: true,
   scroll: true,
   height: "auto",
   width: "600px",
   fixed: false,
   shadow: false,
-  elementClass: "dialog"
+  customClass: null
 }
 
 export class es6Dialog {
@@ -64,7 +65,10 @@ export class es6Dialog {
    */
   _cleanClasses() {
     this.el.removeAttribute("class")
-    this.el.classList.add(this.settings.elementClass)
+    this.el.classList.add("dialog")
+    if (this.settings.customClass) {
+      this.el.classList.add(this.settings.customClass)
+    }
   }
   /**
    * @description Adds modifier classes to the element
@@ -100,7 +104,7 @@ export class es6Dialog {
       }
       this.el.appendChild(wrapper)
     }
-    if (!exists(".js-close-dialog")) {
+    if (this.settings.showClose && !exists(".js-close-dialog")) {
       const close = document.createElement("a")
       close.classList.add("js-close-dialog", "dialog__close")
       close.setAttribute("data-dialog-id", this.el.getAttribute("id"))

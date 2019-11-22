@@ -14,7 +14,9 @@ const myAdvancedDialog     = new es6Dialog(document.querySelector("#js-advanced"
   scroll: false,
   height: "auto",
   width: "1200px",
-  fixed: true
+  fixed: true,
+  showClose: false,
+  elementClass: "customClass"
 })
 myAdvancedDialogLink.addEventListener("click", (e) => {
   e.preventDefault()
