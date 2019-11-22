@@ -96,7 +96,16 @@
         })<br><br>
         myAdvancedDialogLink.addEventListener("click", (e) => {<br>
         &nbsp;&nbsp;e.preventDefault()<br>
-        &nbsp;&nbsp;myAdvancedDialog.open()<br>
+        &nbsp;&nbsp;myAdvancedDialog.open(() => {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;alert("OPENING DIALOG")<br>
+        &nbsp;&nbsp;})<br>
+        })<br>
+        const closeAdvancedDialog = document.querySelector("#js-closeAdvancedDialog")<br>
+        closeAdvancedDialog.addEventListener("click", (e) => {<br>
+        &nbsp;&nbsp;e.preventDefault()<br>
+        &nbsp;&nbsp;myAdvancedDialog.close(() => {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;alert("CLOSING DIALOG")<br>
+        &nbsp;&nbsp;})<br>
         })
       </code>
     </div>
@@ -104,6 +113,7 @@
       <h2>Javascript-triggered dialog</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odit aut aspernatur sit delectus illum
         consectetur reprehenderit numquam, totam quia? Dicta modi officia qui unde sint! Veniam iste odio expedita?</p>
+      <p><button id="js-closeAdvancedDialog">Custom close button</button></p>
     </dialog>
   </section>
   <footer>

@@ -71,7 +71,7 @@ dialog.init({
 ```
 
 
-### ``open()``
+### ``open(callback)``
 
 The ``open()`` method enables you to trigger a dialog element.
 
@@ -88,15 +88,18 @@ const bigFixedDialog = new es6Dialog(element, {
 })
 bigFixedDialog.open()
 ```
+The ``callback`` is optional.
 
-### ``close()``
+### ``close(callback)``
 
 The ``close()`` method closes the dialog :
 
 ```js
 bigFixedDialog.close()
 ```
+The ``callback`` is optional.
 
+---
 Here is the list of settings :
 - ``selector`` (default: ``".js-dialog"``)
 - ``closeText``

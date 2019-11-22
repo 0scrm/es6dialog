@@ -18,5 +18,14 @@ const myAdvancedDialog     = new es6Dialog(document.querySelector("#js-advanced"
 })
 myAdvancedDialogLink.addEventListener("click", (e) => {
   e.preventDefault()
-  myAdvancedDialog.open()
+  myAdvancedDialog.open(() => {
+    alert("OPENING DIALOG")
+  })
+})
+const closeAdvancedDialog = document.querySelector("#js-closeAdvancedDialog")
+closeAdvancedDialog.addEventListener("click", (e) => {
+  e.preventDefault()
+  myAdvancedDialog.close(() => {
+    alert("CLOSING DIALOG")
+  })
 })

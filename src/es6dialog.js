@@ -27,22 +27,28 @@ export class es6Dialog {
   /**
    * @description Shows the dialog element using the dialog API (or the Polyfill)
    */
-  open() {
+  open(callback) {
     dialogPolyfill.registerDialog(this.el) // Polyfill
     document.querySelector("body").appendChild(this.el) // Fix z-index
     this._setScroll()
     this.el.showModal()
     this._attachEvents()
+    if (typeof callback === "function" && callback()) {
+      callback()
+    }
   }
   /**
    * @description Closes the dialog
    */
-  close() {
+  close(callback) {
     this._detachEvents()
     if (document.body.classList.contains("dialog-no-scroll")) {
       document.body.classList.remove("dialog-no-scroll")
     }
     this.el.close()
+    if (typeof callback === "function" && callback()) {
+      callback()
+    }
   }
   /**
    * @description Applies styles to the dialog
