@@ -46,7 +46,9 @@ export class es6Dialog {
     if (document.body.classList.contains("dialog-no-scroll")) {
       document.body.classList.remove("dialog-no-scroll")
     }
-    this.el.close()
+    if (this.el.hasAttribute("open")) {
+      this.el.close()
+    }
     if (typeof callback === "function" && callback()) {
       callback()
     }
